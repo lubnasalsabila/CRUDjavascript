@@ -5,8 +5,17 @@ const {
     getBook,
     addBook,
     updateBook,
-    deleteBook
+    deleteBook,
+    search,
+    sortBy
 } = require('../controllers/BookController')
+
+//contoh akses http://localhost:3000/search?keyword=mau cari apa
+router.get('/search', search)
+
+//contoh akses http://localhost:3000/search?order= DESC / ASC
+router.get('/sort', sortBy)
+
 //route untuk menampilkan data 
 router.get('/', getBooks)
 
